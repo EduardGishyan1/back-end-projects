@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <div>
+
+        <h1 class="title">Login Page</h1>
+        <form action="/" method="post">
+            <input type="text" name="username" placeholder="Enter username" required><br><br>
+            <input type="password" name="password" placeholder="Enter password" required><br>
+            <p style="font-size: 15px;">Don't have an account <a style="font-size: 17px;text-decoration: none;"
+                    href="/register">register</a></p>
+            <button class="btn" type="submit">Send</button>
+        </form>
+    </div>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            font-family: cursive;
+            font-size: 50px;
+        }
+
+        input {
+            text-align: center;
+            width: 90%;
+            height: 30px;
+            border-radius: 20px;
+            border: gray solid 1px;
+        }
+
+
+        .btn {
+            margin: auto;
+            width: 90%;
+            font-size: 25px;
+            height: 50px;
+            border: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            border-radius: 100px;
+            transition: 0.5s;
+            font-family: cursive;
+        }
+
+        .btn:hover {
+            transform: scale(0.93);
+        }
+    </style>
+</body>
+
+</html>

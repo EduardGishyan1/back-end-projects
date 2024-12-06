@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Page</title>
+</head>
+<body>
+    <h1>Hello, {{ username }}!</h1>
+    <p>Welcome to the secure page.</p>
+    <a href="/logout"><button class="btn">Log out</button></a>
+    <style>
+        .btn {
+            margin: auto;
+            width: 200px;
+            font-size: 25px;
+            height: 40px;
+            border: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            border-radius: 100px;
+            transition: 0.5s;
+            font-family: cursive;
+        }
+        .btn:hover {
+            transform: scale(0.93);
+        }
+    </style>
+</body>
+</html>
