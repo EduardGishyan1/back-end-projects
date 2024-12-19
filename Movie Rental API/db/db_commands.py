@@ -1,7 +1,5 @@
 """Commands For postgresql"""
 
-# db_commands.py
-
 CREATE_TABLE_USERS = """
     CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
