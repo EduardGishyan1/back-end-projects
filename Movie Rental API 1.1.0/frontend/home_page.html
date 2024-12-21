@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body style="background: #f6cd61">
+    <header>
+        <nav class="menu" style="height: 5vh;">
+            <ul class="menu-list">
+                <li class="menu-item"><a style="color: #f6cd61;" href="/auth/home">Home</a></li>
+                <li class="menu-item"><a href="\movies">Add Movies</a></li>
+                <li class="menu-item"><a href="\rentals">Add Rentals</a></li>
+            </ul>
+            <a href="\auth\logout" style="float: right; color: #f6cd61;">log out</a>
+
+        </nav>
+
+    </header>
+    <main>
+        <div class="main_div" style="height: 86vh;">
+            <div class="first_div">
+                <div class="content_div" style="height: 100%;">
+                    <button onclick="filter()"
+                        style="display: inline;cursor: pointer;background: #f6cd61;border: none;"><i
+                            class="fa-solid fa-filter"></i> FILTER</button>
+                    <div id="filter_div"
+                        style="height: 50%; width: 60%; border: solid 1px; display: none; margin: auto;margin-top: 10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="second_div" id="second_div" style="position: relative;overflow-y: scroll; ;height: 100%">
+                <h1 style="text-align: center;padding: 5px; font-family: cursive;">Movie List</h1>
+                <button onclick="change_topic()"
+                    style="position: absolute; right: 30px; top: 30px; background: #f6cd61; border: none;font-size: 20px;cursor: pointer; font: 900;">Rental
+                    List</button>
+                    <div class="movies">
+                        {% if movies %}
+                            {% for movie in movies %}
+                                <div class="movie_div">
+                                    <h3>Title: {{ movie.title }}</h3>
+                                    <p>Genre: {{ movie.genre }}</p>
+                                    <p>Rating: {{ movie.rating }}</p>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>No movies available.</p>
+                        {% endif %}
+                    </div>
+                    
+            </div>
+            <div class="second_div" id="third_div" style="position: relative;overflow-y: scroll; ;height: 100%">
+                <h1 style="text-align: center;padding: 5px; font-family: cursive;">Rental List</h1>
+                <button onclick="change_topic()"
+                    style="position: absolute; right: 30px; top: 30px; background: #f6cd61; border: none;font-size: 20px;cursor: pointer; font: 900;">Movie
+                    List</button>
+                    
+            </div>
+        </div>
+    </main>
+
+    <footer style="height: 5vh;">
+        <div class="footer_content">
+            <div class="icons">
+                <a href="#"><i class="fa-brands fa-youtube yt"></i></a>
+                <a href="#"><i class="fa-brands fa-github gt_x"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin li"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter gt_x"></i></a>
+            </div>
+            <div>
+                <h3 style="margin-right: 20px;">@created by EduardGishyan</h3>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+         
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .menu-list {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .menu-item {
+            margin: 0 20px;
+        }
+
+        .menu-item a {
+            transition-duration: 0.3s;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 8px 15px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .menu-item a:hover {
+            font-size: 18px;
+        }
+
+        .menu-item a:active {
+            color: orange;
+        }
+
+        .main_div {
+            background: #f6cd61;
+            display: flex;
+        }
+
+        .first_div {
+            padding: 20px;
+            border-right: solid 1px;
+            width: 20vw;
+        }
+
+        .second_div {
+            width: 80vw;
+        }
+
+        .movies {
+            padding: 10px;
+        }
+
+        .movie_div {
+            border: 1px solid;
+            margin: auto;
+            width: 70%;
+            height: 200px;
+        }
+
+        .movies div {
+            margin-top: 3%;
+        }
+
+        .movie_div p,h3{
+            padding: 5px;
+            text-align: center;
+        }
+
+        .footer_content {
+            display: flex;
+            justify-content: space-between;
+            border-top: solid 1px;
+            background: #f6cd61;
+        }
+
+        .icons {
+            padding: 20px;
+        }
+
+        .icons a {
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        .yt {
+            color: red;
+        }
+
+        .gt_x {
+            color: black;
+        }
+
+        .li {
+            color: blue;
+        }
+        #third_div{
+            display: none;
+        }
+    </style>
+
+    <script>
+window.onload = () => {
+    localStorage.clear();  
+    sessionStorage.clear(); 
+};
+        function filter(){
+         alert("I will implement this")
+        }
+        rental_div = document.getElementById("third_div")
+        movies_div = document.getElementById("second_div")
+        let count = 0
+        function change_topic(){
+        if (count % 2 == 0){
+            rental_div.style.display = "none"
+            movies_div.style.display = "block"
+            count++
+        }
+        else{
+            rental_div.style.display = "block"
+            movies_div.style.display = "none"
+            count++
+        }
+        }
+    </script>
+   
+</body>
+
+</html>
