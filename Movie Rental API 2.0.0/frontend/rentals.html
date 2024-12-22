@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body style="background: #f6cd61;">
+    <header>
+        <nav class="menu" style="height: 5vh;">
+            <ul class="menu-list">
+                <li class="menu-item"><a href="/auth/home">Home</a></li>
+                <li class="menu-item"><a href="/movies">Add Movies</a></li>
+                <li class="menu-item"><a style="color: #f6cd61;" href="#">Add Rentals</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main style="background: #f6cd61;">
+        <div class="main_div">
+        <h1 style="text-align: center;font-family: sans-serif;">Add rentals</h1>
+        <div class="add_rentals">
+            <form action="/rentals" method="post">
+                <input name="user_id"  type="text" placeholder="User ID">
+                <input name="movie_id"  type="text" placeholder="Movie ID">
+                <input name="rental_duration" type="text" placeholder="Rental Duration">
+                <button type="submit" class="add_button">Add</button>
+            </form>
+        </div>        
+    </div>
+    </main>
+    <footer style="height: 5vh;">
+        <div class="footer_content">
+            <div class="icons">
+                <a href="#"><i class="fa-brands fa-youtube yt"></i></a>
+                <a href="#"><i class="fa-brands fa-github gt_x"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin li"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter gt_x"></i></a>
+            </div>
+            <div>
+                <h3 style="margin-right: 20px;">@created by me</h3>
+            </div>
+        </div>
+    </footer>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .menu-list {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .menu-item {
+            margin: 0 20px;
+        }
+
+        .menu-item a {
+            transition-duration: 0.3s;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 8px 15px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .menu-item a:hover {
+            font-size: 18px;
+        }
+
+        .menu-item a:active {
+            color: orange;
+        }
+
+        .footer_content {
+            display: flex;
+            justify-content: space-between;
+            border-top: solid 1px;
+            background: #f6cd61;
+        }
+
+        .icons {
+            padding: 20px;
+        }
+
+        .icons a {
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        .yt {
+            color: red;
+        }
+
+        .gt_x {
+            color: black;
+        }
+
+        .li {
+            color: blue;
+        }
+        form input{
+            margin-top: 20px;
+            display: block;
+            width: 300px;
+            height: 30px;
+            border-radius: 100px;
+            border: none;
+            text-align: center;
+        }
+        
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: self-start;
+            height: 86vh;
+        }
+        .main_div{
+            margin-top: 10%;
+        }
+        .add_button{
+            transition: 0.3s;
+            margin-top: 20px;
+            cursor: pointer;
+            height: 35px;
+            border-radius: 100px;
+            border: none;
+            font-size: 17px;
+            background: black;
+            color: white;
+            width: 100%;
+        }
+        .add_button:hover{
+            transform: scale(0.9);
+        }
+    </style>
+</body>
+</html>
