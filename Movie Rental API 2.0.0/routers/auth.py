@@ -10,7 +10,7 @@ from models import schemas
 from db import db_commands,db_connection
 from utils import auth_utils
 
-templates = Jinja2Templates(directory = "/home/eduard/Desktop/Movie Rental API 1.1.0/frontend")
+templates = Jinja2Templates(directory = "/home/eduard/Desktop/Movie Rental API 2.0.0/frontend")
 
 load_dotenv()
 
