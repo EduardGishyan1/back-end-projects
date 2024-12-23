@@ -8,7 +8,7 @@ from models import schemas
 from db import db_connection,db_commands
 from utils import auth_utils
 
-templates = Jinja2Templates(directory = "/home/eduard/Desktop/Movie Rental API 1.1.0/frontend")
+templates = Jinja2Templates(directory = "/home/eduard/Desktop/Movie Rental API 2.0.0/frontend")
 
 movie_router = APIRouter(prefix = "/movies",tags = ["Movies"])
 
