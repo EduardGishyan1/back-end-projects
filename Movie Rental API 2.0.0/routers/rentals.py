@@ -9,7 +9,7 @@ from utils import auth_utils
 
 rental_router = APIRouter(prefix = "/rentals",tags = ["Rentals"])
 
-templates = Jinja2Templates(directory = "/home/eduard/Desktop/Movie Rental API 1.1.0/frontend")
+templates = Jinja2Templates(directory = "/home/eduard/Desktop/Movie Rental API 2.0.0/frontend")
 
 def create_rental(user_id = Form(...),movie_id = Form(...),
                   rental_duration = Form(...)):
