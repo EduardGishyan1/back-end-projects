@@ -31,7 +31,7 @@ async def list_of_movies(request: Request):
 
 
 @movie_router.post("/")
-async def add_new_movie(movie:schemas.Movie = Depends(create_movie),
+async def add_new_movie(movie:schemas.User = Depends(create_movie),
                         db = Depends(db_connection.get_db)):
     """
     Adds a movie. Requires authentication.
@@ -44,8 +44,7 @@ async def add_new_movie(movie:schemas.Movie = Depends(create_movie),
     Returns:
         dict: Success message.
     """
-    
     async with db as connection:
-        await connection.fetch(db_commands.INSERT_INTO_MOVIES,movie.get("user_id"),
-                               movie.get("movie_id"),movie.get("rental_duration"))
+        await connection.fetch(db_commands.INSERT_INTO_MOVIES,movie.get("title"),
+                               movie.get("genre"),movie.get("rating"))
         return RedirectResponse("/auth/home",status_code = 303)
