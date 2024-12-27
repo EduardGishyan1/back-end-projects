@@ -53,6 +53,7 @@
                     <p>No movies available.</p>
                     {% endif %}
                 </div>
+                
 
             </div>
             <div class="second_div" id="third_div" style="position: relative;overflow-y: scroll; ;height: 100%">
@@ -60,6 +61,19 @@
                 <button onclick="change_topic()"
                     style="position: absolute; right: 30px; top: 30px; background: #f6cd61; border: none;font-size: 20px;cursor: pointer; font: 900;">Movie
                     List</button>
+                    <div class="movies">
+                        {% if rentals %}
+                        {% for rental in rentals %}
+                        <div class="movie_div">
+                            <h3>Title: {{ rental.user_id }}</h3>
+                            <p>Genre: {{ rental.movie_id }}</p>
+                            <p>Rating: {{ rental.rental_duration }}</p>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <p>No rentals available.</p>
+                        {% endif %}
+                    </div>
 
             </div>
         </div>
@@ -128,7 +142,7 @@
 
         .first_div {
             overflow: hidden;
-            word-wrap: break-word;
+            text-overflow: unset;
             padding-left: 20px;
             padding-right: 20px;
             border-right: solid 1px;
@@ -225,13 +239,13 @@
         let count = 0
         function change_topic() {
             if (count % 2 == 0) {
-                rental_div.style.display = "none"
-                movies_div.style.display = "block"
+                rental_div.style.display = "block"
+                movies_div.style.display = "none"
                 count++
             }
             else {
-                rental_div.style.display = "block"
-                movies_div.style.display = "none"
+                rental_div.style.display = "none"
+                movies_div.style.display = "block"
                 count++
             }
         }
