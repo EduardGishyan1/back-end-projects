@@ -15,7 +15,7 @@
         <nav class="menu" style="height: 5vh;">
             <ul class="menu-list">
                 <li class="menu-item"><a style="color: #f6cd61;" href="/auth/home">Home</a></li>
-                <li class="menu-item"><a href="\movies">Add Movies</a></li>
+                <li class="menu-item"><a href="\rental_movies">Add rental_movies</a></li>
                 <li class="menu-item"><a href="\rentals">Add Rentals</a></li>
             </ul>
         </nav>
@@ -40,10 +40,10 @@
                 <button onclick="change_topic()"
                     style="position: absolute; right: 30px; top: 30px; background: #f6cd61; border: none;font-size: 20px;cursor: pointer; font: 900;">Rental
                     List</button>
-                <div class="movies">
+                <div class="rental_movies">
                     {% if movies %}
                     {% for movie in movies %}
-                    <div class="movie_div">
+                    <div class="rental_movie_div">
                         <h3>Title: {{ movie.title }}</h3>
                         <p>Genre: {{ movie.genre }}</p>
                         <p>Rating: {{ movie.rating }}</p>
@@ -61,10 +61,10 @@
                 <button onclick="change_topic()"
                     style="position: absolute; right: 30px; top: 30px; background: #f6cd61; border: none;font-size: 20px;cursor: pointer; font: 900;">Movie
                     List</button>
-                    <div class="movies">
+                    <div class="rental_movies">
                         {% if rentals %}
                         {% for rental in rentals %}
-                        <div class="movie_div">
+                        <div class="rental_movie_div">
                             <h3>Title: {{ rental.user_id }}</h3>
                             <p>Genre: {{ rental.movie_id }}</p>
                             <p>Rating: {{ rental.rental_duration }}</p>
@@ -157,22 +157,22 @@
             width: 90vw;
         }
 
-        .movies {
+        .rental_movies {
             padding: 10px;
         }
 
-        .movie_div {
+        .rental_movie_div {
             border: 1px solid;
             margin: auto;
             width: 70%;
             height: 200px;
         }
 
-        .movies div {
+        .rental_movies div {
             margin-top: 3%;
         }
 
-        .movie_div p,
+        .rental_movie_div p,
         h3 {
             padding: 5px;
             text-align: center;
@@ -235,17 +235,17 @@
             alert("I will implement this")
         }
         let rental_div = document.getElementById("third_div")
-        let movies_div = document.getElementById("second_div")
+        let rental_movies_div = document.getElementById("second_div")
         let count = 0
         function change_topic() {
             if (count % 2 == 0) {
                 rental_div.style.display = "block"
-                movies_div.style.display = "none"
+                rental_movies_div.style.display = "none"
                 count++
             }
             else {
                 rental_div.style.display = "none"
-                movies_div.style.display = "block"
+                rental_movies_div.style.display = "block"
                 count++
             }
         }
